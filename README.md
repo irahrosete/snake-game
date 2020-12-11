@@ -10,20 +10,30 @@ The aim of the program is to entertain as well as provide some competitive incen
 
 The target audience is anyone from someone looking to have a break from a day's work, to someone who is looking to improve their basic coordination skills, to a master Snake gamer wanting to keep their lead recorded.
 
-
 ## Features
-Develop a list of features that will be included in the application. It must include:
-- at least THREE features
-- describe each feature
+1. Game interface <br>
+   The actual game will be housed in a window separate to the terminal to give a better user experience. There will be an ability to pause and quit the game once it is started. The snake will be able to go through the canvas borders and come back in through the other side. The game will automatically finish once the snake hits it own body.
 
-Note: Ensure that your features above allow you to demonstrate your understanding of the following language elements and concepts:
-- use of variables and the concept of variable scope
-- loops and conditional control structures
-- error handling
+2. Scoring system <br>
+   The game will keep track of the number of items that the snake eats: 1 point for every dot. The program will keep a record of the top 10 highest scoring players and their corresponding scores.
 
-300 words (approx. 100 words per feature)
+3. User Input <br>
+   Player name will be asked at the start of the game. The player's name will show in the interface while the game is being played. The game will not start unless a name is provided. At the end of the game, the player has the option to input their email address if they wish to be included in the leader board. Players' scores will only be saved and included to the leader board if they provide an email address.
+
+4. Menu <br>
+   There will be a list of menu items to assist the player before a new game is played:
+   - The **Help** function will give a description of the game and show the controls available to play as well as controls to pause, restart and halt the game.
+   - The **Top 10** function will retrieve a list of players currently in the top 10 and their corresponding top scores. This list will be printed out in the terminal but can also be printed out in a text file.
+   - The **Start** function will start the game.
+   - The **Exit** function will close the application.
+
+5. Notification <br>
+   The program will send an email notification to the current leader once a registered player beats their score. The notification will include the player name, the new top score, and the date when the new top score was recorded as well as an invitation to play the game again. No notification will be sent if the current top score remains the same. This notification assumes that a player who registers has given a valid email address.
 
 ## User Interface
+The game is presented with a list of menus
+
+
 Develop an outline of the user interaction and experience for the application.
 Your outline must include:
 - how the user will find out how to interact with / use each feature
@@ -45,7 +55,7 @@ Utilise a suitable project management platform to track this implementation plan
 
 > Your checklists for each feature should have at least 5 items.
 
-## Help
+## Setup
 Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
 
 You must include:
