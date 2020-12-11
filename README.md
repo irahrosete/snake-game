@@ -2,22 +2,14 @@
 
 ## Purpose and Scope
 
-Snake is a game that surged to popularity in the late 90s and early 2000s when Nokia phones came preloaded with it. A player starts with a short line that moves forward and is maneuvered in order to eat items (in the form of dots) within a bordered plane. The line then grows in length according to the number of items it eats resembling a snake. The aim of the game is to each as much items without hitting the snake's own body.
+Snake is a game that surged to popularity in the late 90s and early 2000s when Nokia phones came preloaded with it. It is a classic game where a player starts with a short line that moves forward and is maneuvered within a bordered plane in order to eat items in the form of dots. The line keeps moving forward and grows in length according to the number of items eaten, resembling a snake. The aim of the game is to eat as much items without hitting the snake's own body, or in some versions, the borders.
 
-This project aims to recreate the Snake game using Ruby and the programming and algorithm knowledge I've gained so far. In the process of developing the game, I also aim to learn more about grids and collision detection, as well as the use of Ruby gems and APIs to solidify my skills.
+This project aims to recreate the Snake game using Ruby. The project will apply object-oriented programming with the use of classes, defining methods and utilising algorithm knowledge that I've gained so far. In the process of developing the game, I also aim to learn more about grids and coordinates and collision detection, which are essential concepts to the game. In addition, I will also be learning about how to apply Ruby gems to make the game more interactive and use-friendly, as well as tapping into the power of APIs (Application Programming Interfaces). This will hopefully extend my Ruby knowledge and solidy my skills in programming.
 
-The program will have the ability to keep track of players that have played the game and maintain a leaderboard. It will also have a notification system that can alert the top player once their score has been beaten.
+The aim of the program is to entertain as well as provide some competitive incentive. There will be a scoring system. The score is updated and printed out as the game is played and a final score is printed out once the game is over. The program will have the ability to keep track of players that have played the game, and maintain a leaderboard. It will also have a notification system that can alert the top player in real-time once their score has been beaten.
 
-The aim of the program is to entertain as well as provide some competitive incentive. The target audience is anyone from someone looking to have a break from a day's work, to someone who is a master Snake gamer wanting to keep their lead recorded.
+The target audience is anyone from someone looking to have a break from a day's work, to someone who is looking to improve their basic coordination skills, to a master Snake gamer wanting to keep their lead recorded.
 
-
-Develop a statement of purpose and scope for your application. It must include:
-- describe at a high level what the application will do
-- identify the problem it will solve and explain why you are developing it
-- identify the target audience
-- explain how a member of the target audience will use it
-
-	300 - 500 words
 
 ## Features
 Develop a list of features that will be included in the application. It must include:
