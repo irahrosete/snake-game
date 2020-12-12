@@ -36,19 +36,11 @@ The game starts in a new window and once a game is over, the user can choose to 
 When a user beats the current top score, an email notification is automatically sent to the holder of that top score to let them know that their score has been beaten along with the information of who beat them and an invitation to play the game again.
 
 ## Control Flow
-Develop a diagram which describes the control flow of your application. Your diagram must:
-- show the workflow/logic and/or integration of the features in your application for each feature.
-- utilise a recognised format or set of conventions for a control flow diagram, such as UML.
-
-## Implementation
-Develop an implementation plan which:
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-
-Utilise a suitable project management platform to track this implementation plan
-
-> Your checklists for each feature should have at least 5 items.
+![snake-game-flowchart](./docs/snake-game.png)
+## Implementation Plan
+Trello was used to implement the features of this application.<br>
+[Snake Game - Trello Board](https://trello.com/b/COkQo7qV)
+![snake-game-trello-board](docs/snake-game-trello-board.jpg)
 
 ## Setup
 #### Installation
