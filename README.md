@@ -47,10 +47,10 @@ Trello was used to implement the features of this application.<br>
 Install Ruby
 #### Dependencies
 This application uses the following gems:
-- Ruby 2D
-- TTY Prompt
-- TextMagic / Pony
-- Artii
+- ruby2D
+- TTY::Prompt
+- net-smtp
+- artii
 
 #### System Requirements
 
