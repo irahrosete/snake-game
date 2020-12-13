@@ -44,13 +44,13 @@ Trello was used to implement the features of this application.<br>
 
 ## Setup
 #### Installation
-
+Install Ruby
 #### Dependencies
 This application uses the following gems:
 - Ruby 2D
 - TTY Prompt
 - TextMagic / Pony
-- ASCII Art
+- Artii
 
 #### System Requirements
 
