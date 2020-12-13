@@ -1,5 +1,4 @@
-system "clear"
-puts "How to Play the Snake Game\n\n"
+puts "\nHow to Play the Snake Game\n\n"
 # sleep 2
 puts "Collect as much food to feed the hungry snake 🐍."
 # sleep 3

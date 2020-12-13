@@ -44,13 +44,21 @@ Trello was used to implement the features of this application.<br>
 
 ## Setup
 #### Installation
-Install Ruby
+As this application runs on Ruby, you will need to have Ruby installed on your system.
 #### Dependencies
 This application uses the following gems:
-- ruby2D
-- TTY::Prompt
-- net-smtp
-- artii
+###### 1. ruby2D
+  On Linux:
+  - Follow instructions [here](https://www.ruby2d.com/learn/linux/#install-packages) to install a few packages before installing the gem.
+  - Run `sudo apt-get update`.
+  - Run `sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev`
+  - And finally install the gem using `gem install ruby2d`.
+  - If required, run `gem pristine ruby2d --version 0.9.4`
+
+On Mac and Windows:
+  - Install the gem using `gem install ruby2d`.
+###### 2. TTY::Prompt
+###### 3. net-smtp
 
 #### System Requirements
 
