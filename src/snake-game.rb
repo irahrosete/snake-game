@@ -1,14 +1,22 @@
 require "tty-prompt"
-
 system "clear"
-prompt = TTY::Prompt.new
-player = prompt.ask("Hi there! Welcome to the Snake Game. What is your name?\n", required: true)
 
+puts "  _____ ____    ____  __  _    ___       ____   ____  ___ ___    ___ "
+puts " / ___/|    \\  /    T|  l/ ]  /  _]     /    T /    T|   T   T  /  _]"
+puts "(   \\_ |  _  YY  o  ||  ' /  /  [_     Y   __jY  o  || _   _ | /  [_ "
+puts " \\__  T|  |  ||     ||    \\ Y    _]    |  T  ||     ||  \\_/  |Y    _]"
+puts " /  \\ ||  |  ||  _  ||     Y|   [_     |  l_ ||  _  ||   |   ||   [_ "
+puts " \\    ||  |  ||  |  ||  .  ||     T    |     ||  |  ||   |   ||     T"
+puts "  \\___jl__j__jl__j__jl__j\\_jl_____j    l___,_jl__j__jl___j___jl_____j"
+
+prompt = TTY::Prompt.new
+puts "\n\n"
+player = prompt.ask("Hi there! Welcome to the Snake Game. What is your name?\n", required: true)
 puts "\nHi, #{player}!\n\n"
 
 for option in (1..nil)
     option = prompt.select("Let's play.") do |menu|
-        menu.choice "Start game"
+        menu.choice "Start Game"
         menu.choice "How to Play"
         menu.choice "Top 10 Players"
         menu.choice "Exit"
@@ -16,41 +24,17 @@ for option in (1..nil)
 
     case option
         when "Start Game"
-            # load 'game.rb'
-        when "How to Play"
+            load 'game.rb'
+            prompt.keypress("\nPress any key to continue.")
             system "clear"
-            puts "How to Play the Snake Game\n\n"
-            sleep 2
-            puts "Collect as much food to feed the hungry snake 🐍."
-            sleep 3
-            puts "\nUse the ⬅️  ➡️  ⬆️  ⬇️  arrow keys on your keyboard to maneuver the snake."
-            sleep 3
-            puts "\nThe more food you collect,"
-            sleep 1.5
-            puts "the longer the snake becomes,"
-            sleep 1.5
-            puts "the higher your score!"
-            sleep 3
-            puts "\nMake sure not to collide the snake to its own body."
-            sleep 3
-            puts "Otherwise, Game Over. 🛑"
-            sleep 3
-            puts "\nYou can press:"
-            sleep 1.5
-            puts "p to pause"
-            sleep 1.5
-            puts "r to resume"
-            sleep 1.5
-            puts "q to quit"
-            sleep 3
-            puts "\nHave fun!\n\n"
+        when "How to Play"
+            load 'how-to-play.rb'
             prompt.keypress("Press any key to continue.")
             system "clear"
             next
         when "Top 10 Players"
             system "clear"
             puts "Top 10 Players\n\n"
-
             prompt.keypress("Press any key to continue.")
             system "clear"
             next
