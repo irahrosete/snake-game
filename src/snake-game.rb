@@ -25,8 +25,8 @@ for option in (1..nil)
 
     case option
         when "Start Game"
-            load 'game.rb'
-            prompt.keypress("\nPress spacebar to quit", keys: [:space])
+            load './game/game.rb'
+            prompt.keypress("\nPress Enter to continue", keys: [:return])
             system "clear"
         when "How to Play"
             clear

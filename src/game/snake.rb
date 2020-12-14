@@ -4,7 +4,7 @@ class Snake
         @positions = [[2,5], [2,6], [2,7]]
         @x = 2
         @y = 5
-        @snake = "@"
+        @snake = "🍪"
         @body = "#"
 
     end
