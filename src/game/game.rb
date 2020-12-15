@@ -7,4 +7,8 @@ board.create_board_array
 snake = Snake.new(board)
 snake.draw_snake
 
-board.draw_board
+loop do
+    snake.move(snake.get_direction)
+    board.draw_board
+    sleep 0.4
+end

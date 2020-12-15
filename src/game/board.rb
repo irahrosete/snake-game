@@ -32,5 +32,4 @@ class Board
             puts "\n"
         end
     end
-
 end
