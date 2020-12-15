@@ -13,8 +13,8 @@ class Snake
         @row = @size - 16
         @col = 2
         (0..2).each do |s| # snake starts with length of 3 squares
-            @squares[@row][@col + s] = "⬜" # to apply white square to the coordinates
-            @snake[s] = {"x" => @row, "y" => @col + s} # to assign coordinates to each snake element
+            @squares[@row][@col + s] = "⬜" # applies white square to the coordinates
+            @snake[s] = {"x" => @row, "y" => @col + s} # assigns coordinates to each snake element
         end
     end
 
@@ -25,24 +25,30 @@ class Snake
     def move(direction)
         @direction = direction
 
+        # identifies coordinates of snake tail
         @tail_row = @snake[0]["x"]
         @tail_col = @snake[0]["y"]
+        # identifies coordinates of snake head
         @head_row = @snake[@snake.length - 1]["x"]
         @head_col = @snake[@snake.length - 1]["y"]
 
         prompt = TTY::Prompt.new
 
-        if @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] == "⬜"
-            puts "\nGame Over\n\n"
+        if @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] == "⬜" # head bumps into another white square
+            puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
+            # \e[41m - red background
+            # \e[37m - white text
+            # \e[0m - clear
             prompt.keypress("Press Enter to continue", keys: [:return])
             load "../src/snake-game.rb"
         else
+            # adds white square to head
             @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] = "⬜"
             @snake.push("x" => @head_row + @direction["x"], "y" => @head_col + @direction["y"])
-            @currrent_direction = @direction
+            # removes black square from the tail
+            @squares[@tail_row][@tail_col] = "⬛"
+            @snake.shift
         end
 
-        @squares[@tail_row][@tail_col] = "⬛"
-        @snake.shift
     end
 end
