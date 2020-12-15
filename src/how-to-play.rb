@@ -10,7 +10,7 @@ puts "the longer the snake becomes,"
 # sleep 1.5
 puts "the higher your score!"
 # sleep 3
-puts "\nMake sure not to collide the snake to its own body."
+puts "\nMake sure not to collide the snake to the walls or its own body."
 # sleep 3
 puts "Otherwise, Game Over. 🛑"
 # sleep 3

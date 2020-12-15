@@ -1,10 +1,11 @@
 require_relative 'board'
 require_relative 'snake'
 
-FPS = 30
-
 board = Board.new
-snake = Snake.new
+snake = Snake.new(board)
 
 board.draw
-snake.draw(board)
+snake.draw
+
+#to somehow make the snake move. test this.
+board.redraw_board

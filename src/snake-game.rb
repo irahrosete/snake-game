@@ -9,6 +9,7 @@ sleep 2
 system "clear"
 
 def clear
+    sleep 0.5
     system "clear"
     load 'title.rb'
     sleep 0.5
@@ -25,6 +26,7 @@ for option in (1..nil)
 
     case option
         when "Start Game"
+            sleep 0.5
             load './game/game.rb'
             prompt.keypress("\nPress Enter to continue", keys: [:return])
             system "clear"
