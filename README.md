@@ -17,11 +17,13 @@ The actual game will be housed in a window separate to the terminal to give a be
 The game will keep track of the number of items that the snake eats: 1 point for every dot. The program will keep a record of the top 10 highest scoring players and their corresponding scores.
 #### User Input
 Player name will be asked at the start of the game. The player's name will show in the interface while the game is being played. The game will not start unless a name is provided. At the end of the game, the player has the option to input their email address if they wish to be included in the leader board. Players' scores will only be saved and included to the leader board if they provide an email address.
+#### File Output
+There will be an ability to save the list of Top 10 Players into a .txt file.
 #### Menu
 There will be a list of menu items to assist the player before a new game is played:
-   - The **Start** function will start the game.
+   - The **Start Game** function will start the game.
    - The **How to Play** function will give a description of the game and show the controls available to play the game as well as controls to pause, restart and halt the game.
-   - The **Top 10** function will retrieve a list of players currently in the top 10 and their corresponding top scores. This list will be printed out in the terminal but can also be printed out in a text file.
+   - The **Top 10 Players** function will retrieve a list of players currently in the top 10 and their corresponding top scores. This list will be printed out in the terminal but can also be printed out in a text file.
    - The **Exit** function will close the application.
 #### Notification
 The program will send an email notification to the current leader once a registered player beats their score. The notification will include the player name, the new top score, and the date when the new top score was recorded as well as an invitation to play the game again. No notification will be sent if the current top score remains the same. This notification assumes that a player who registers has given a valid email address.
@@ -38,7 +40,8 @@ When a user beats the current top score, an email notification is automatically 
 ## Control Flow
 ![snake-game-flowchart](./docs/snake-game.png)
 ## Implementation Plan
-Trello was used to implement the features of this application.<br>
+Trello was used to implement the features of this application. The game was initially planned to utilise the Ruby2D gem but there were compatibility issues with using Ubuntu WSL. A decision was made to render the game raw on the terminal.
+
 [Snake Game - Trello Board](https://trello.com/b/COkQo7qV)
 ![snake-game-trello-board](docs/snake-game-trello-board.jpg)
 
