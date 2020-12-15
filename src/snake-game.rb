@@ -1,7 +1,6 @@
 require "tty-prompt"
 system "clear"
-
-load 'title.rb'
+load "title.rb"
 
 prompt = TTY::Prompt.new
 player = prompt.ask("\nHi there! Welcome to the Snake Game. What is your name?\n", required: true)
@@ -11,12 +10,12 @@ system "clear"
 def clear
     sleep 0.5
     system "clear"
-    load 'title.rb'
+    load "title.rb"
     sleep 0.5
 end
 
 for option in (1..nil)
-    load 'title.rb'
+    load "title.rb"
     option = prompt.select("\nHi, #{player}! Let's play.") do |menu|
         menu.choice "Start Game"
         menu.choice "How to Play"
@@ -27,18 +26,18 @@ for option in (1..nil)
     case option
         when "Start Game"
             sleep 0.5
-            load './game/game.rb'
+            load "./game/game.rb"
             prompt.keypress("\nPress Enter to continue", keys: [:return])
             system "clear"
         when "How to Play"
             clear
-            load 'how-to-play.rb'
+            load "how-to-play.rb"
             prompt.keypress("Press any key to continue.")
             system "clear"
             next
         when "Top 10 Players"
             clear
-            puts "\nTop 10 Players\n\n"
+            load "top-10.rb"
             prompt.keypress("Press any key to continue.")
             system "clear"
             next

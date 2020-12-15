@@ -1,5 +1,5 @@
-require_relative 'board'
-require_relative 'snake'
+require_relative "board"
+require_relative "snake"
 
 board = Board.new(18)
 board.create_board_array
