@@ -2,8 +2,9 @@ require_relative 'board'
 require_relative 'snake'
 
 board = Board.new(18)
-# snake = Snake.new(board)
-
 board.create_board_array
+
+snake = Snake.new(board)
+snake.draw_snake
+
 board.draw_board
-# snake.draw

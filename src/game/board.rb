@@ -1,5 +1,5 @@
 class Board
-    attr_reader :squares
+    attr_reader :squares, :size
     attr_accessor :score
 
     def initialize(size)
@@ -27,7 +27,7 @@ class Board
         puts "SCORE #{@score}\r\n\n"
         @squares.each do |row|
             row.each do |col|
-                print col
+                print col # prints the white square
             end
             puts "\n"
         end
