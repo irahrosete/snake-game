@@ -1,4 +1,4 @@
-puts "\nHow to Play the Snake Game\n\n"
+puts "\n\e[32mHow to Play\e[0m\n\n"
 # sleep 2
 puts "Collect as much food to feed the hungry snake 🐍."
 # sleep 3

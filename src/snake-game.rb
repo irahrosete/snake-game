@@ -16,7 +16,7 @@ end
 
 for option in (1..nil)
     load "title.rb"
-    option = prompt.select("\nHi, #{player}! Let's play.") do |menu|
+    option = prompt.select("\nHi, \e[32m#{player.upcase}\e[0m! Let's play.") do |menu|
         menu.choice "Start Game"
         menu.choice "How to Play"
         menu.choice "Top 10 Players"
@@ -43,7 +43,7 @@ for option in (1..nil)
             next
         when "Exit"
             clear
-            puts "\nGoodbye!\n\n"
+            puts "\n\e[32mGoodbye!\e[0m\n\n"
             exit
     end
 end
