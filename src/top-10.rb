@@ -1,4 +1,5 @@
 require "tty-table"
+require "tty-prompt"
 
 puts "\n\e[32mTop 10 Players\e[0m\n\n"
 
@@ -24,14 +25,17 @@ for i in 0...9
 end
 
 puts table.render(:ascii, padding: [0, 1, 0, 1])
-puts "\nWould you like to save the list? (y/n)"
-ans = gets.chomp
 
-if ans == "y".downcase
+prompt = TTY::Prompt.new
+
+ans = prompt.select("\nWould you like to save the list?") do |menu|
+        menu.choice "Yes"
+        menu.choice "No"
+end
+
+if ans == "Yes"
     File.open("top-10-players.txt", 'w') {|f| f.write top_score}
     puts "File saved.\n\n"
-elsif ans == "n".downcase
+elsif ans == "No"
     puts "\n"
-else
-    puts "Invalid answer.\n\n"
 end
