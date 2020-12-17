@@ -1,6 +1,7 @@
 require "tty-prompt"
 
 class Snake
+    attr_reader :final_score
     def initialize (board, prey)
         @board = board
         @prey = prey
@@ -41,15 +42,24 @@ class Snake
             # \e[37m - white text
             # \e[0m - clear format
             puts "Your score is #{@final_score}.\n\n"
+
+            ans = prompt.select("Would you like to save your score?") do |menu|
+                menu.choice "Yes"
+                menu.choice "No"
+            end
+
+            if ans == "Yes"
+                puts "Score saved.\n\n"
+            elsif ans == "No"
+                puts "\n"
+            end
+
             prompt.keypress("Press Enter to continue", keys: [:return])
             load "../src/snake-game.rb"
         else
             # adds white square to head
             @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] = "⬜"
             @snake.push("row" => @head_row + @direction["row"], "col" => @head_col + @direction["col"])
-            # removes tail of snake by adding black square
-            # @squares[@tail_row][@tail_col] = "⬛"
-            # @snake.shift
         end
 
         if @head_row == @prey.target["row"] && @head_col == @prey.target["col"]
@@ -57,30 +67,28 @@ class Snake
             @prey.draw_prey
             @final_score = @board.score
         else
+            # removes tail of snake by adding black square
             @squares[@tail_row][@tail_col] = "⬛"
             @snake.shift
         end
-
     end
 
     def control
-        # while = true
-            input = STDIN.getch
-            up = "w"
-            down = "s"
-            right = "d"
-            left = "a"
-            print input
-            if input == up
-                @direction = {"row" => -1, "col" => 0}
-            elsif input == down
-                @direction = {"row" => 1, "col" => 0}
-            elsif input == right
-                @direction = {"row" => 0, "col" => 1}
-            elsif input == left
-                @direction = {"row" => 0, "col" => -1}
-            end
-        # end
+        input = STDIN.getch
+        up = "w"
+        down = "s"
+        right = "d"
+        left = "a"
+
+        if input == up
+            @direction = {"row" => -1, "col" => 0}
+        elsif input == down
+            @direction = {"row" => 1, "col" => 0}
+        elsif input == right
+            @direction = {"row" => 0, "col" => 1}
+        elsif input == left
+            @direction = {"row" => 0, "col" => -1}
+        end
     end
 
 end

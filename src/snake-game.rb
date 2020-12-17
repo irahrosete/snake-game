@@ -14,7 +14,7 @@ def clear
     sleep 0.5
 end
 
-for option in (1..nil)
+loop do
     load "title.rb"
     option = prompt.select("\nHi, \e[32m#{player.upcase}\e[0m! Let's play.") do |menu|
         # \e[32m - green text

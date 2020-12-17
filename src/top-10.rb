@@ -22,7 +22,7 @@ end
 
 if ans == "Yes"
     print_score = ""
-    top_score.each {|k, v| print_score += "#{k}: #{v}\n"}
+    top_score.each {|player, score| print_score += "#{player}: #{score}\n"}
     File.open("top-10-players.txt", 'w') {|f| f.write print_score}
     puts "File saved.\n\n"
 elsif ans == "No"

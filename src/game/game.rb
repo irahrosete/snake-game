@@ -13,6 +13,8 @@ snake = Snake.new(board, prey)
 snake.draw_snake
 
 # refreshes the screen to give the illusion of the snake moving
+# screen refreshes when control is input
+# need to figure out how to make the snake move again
 loop do
     snake.move(snake.get_direction)
     board.draw_board
