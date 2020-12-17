@@ -38,14 +38,14 @@ class Snake
             puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
             # \e[41m - red background
             # \e[37m - white text
-            # \e[0m - clear
+            # \e[0m - clear format
             prompt.keypress("Press Enter to continue", keys: [:return])
             load "../src/snake-game.rb"
         else
             # adds white square to head
             @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] = "⬜"
             @snake.push("x" => @head_row + @direction["x"], "y" => @head_col + @direction["y"])
-            # removes black square from the tail
+            # removes tail of snake by adding black square
             @squares[@tail_row][@tail_col] = "⬛"
             @snake.shift
         end

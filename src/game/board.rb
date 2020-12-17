@@ -27,7 +27,7 @@ class Board
         puts "SCORE #{@score}\r\n\n"
         @squares.each do |row|
             row.each do |col|
-                print col # prints the white square
+                print col # prints the squares
             end
             puts "\n"
         end

@@ -4,7 +4,7 @@ load "title.rb"
 
 prompt = TTY::Prompt.new
 player = prompt.ask("\nHi there! Welcome to the Snake Game. What is your name?\n", required: true)
-sleep 2
+sleep 1
 system "clear"
 
 def clear
@@ -17,6 +17,8 @@ end
 for option in (1..nil)
     load "title.rb"
     option = prompt.select("\nHi, \e[32m#{player.upcase}\e[0m! Let's play.") do |menu|
+        # \e[32m - green text
+        # \e[0m - clear format
         menu.choice "Start Game"
         menu.choice "How to Play"
         menu.choice "Top 10 Players"
@@ -27,7 +29,7 @@ for option in (1..nil)
         when "Start Game"
             sleep 0.5
             load "./game/game.rb"
-            prompt.keypress("\nPress Enter to continue", keys: [:return])
+            # prompt.keypress("\nPress Enter to continue", keys: [:return])
             system "clear"
         when "How to Play"
             clear
@@ -38,7 +40,6 @@ for option in (1..nil)
         when "Top 10 Players"
             clear
             load "top-10.rb"
-            prompt.keypress("Press any key to continue.")
             system "clear"
             next
         when "Exit"
