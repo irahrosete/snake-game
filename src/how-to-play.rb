@@ -14,12 +14,12 @@ puts "\nMake sure not to collide the snake to the walls or its own body."
 # sleep 3
 puts "Otherwise, Game Over. 🛑"
 # sleep 3
-puts "\nYou can press:"
-# sleep 1.5
-puts "p to pause"
-# sleep 1.5
-puts "r to resume"
-# sleep 1.5
-puts "q to quit"
+# puts "\nYou can press:"
+# # sleep 1.5
+# puts "p to pause"
+# # sleep 1.5
+# puts "r to resume"
+# # sleep 1.5
+# puts "q to quit"
 # sleep 3
 puts "\nHave fun!\n\n"

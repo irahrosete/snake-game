@@ -1,0 +1,11 @@
+greg: 23
+bob: 20
+carol: 15
+marj: 12
+irah: 10
+jim: 9
+rog: 6
+shaz: 5
+ana: 5
+lyka: 3
+levi: 2

@@ -6,7 +6,7 @@ class Snake
         @prey = prey
         @squares = board.squares
         @size = board.size
-        @direction = {"x" => 0, "y" => 1}
+        @direction = {"row" => 0, "col" => 1} # default direction is to the right. moves 0 rows and 1 column
     end
 
     def draw_snake
@@ -15,7 +15,7 @@ class Snake
         @col = 2
         (0..2).each do |s| # snake starts with length of 3 squares
             @squares[@row][@col + s] = "⬜" # applies white square to the coordinates
-            @snake[s] = {"x" => @row, "y" => @col + s} # assigns coordinates to each snake element
+            @snake[s] = {"row" => @row, "col" => @col + s} # assigns coordinates to each snake element
         end
     end
 
@@ -27,36 +27,60 @@ class Snake
         @direction = direction
 
         # identifies coordinates of snake tail
-        @tail_row = @snake[0]["x"]
-        @tail_col = @snake[0]["y"]
+        @tail_row = @snake[0]["row"]
+        @tail_col = @snake[0]["col"]
         # identifies coordinates of snake head
-        @head_row = @snake[@snake.length - 1]["x"]
-        @head_col = @snake[@snake.length - 1]["y"]
+        @head_row = @snake[@snake.length - 1]["row"]
+        @head_col = @snake[@snake.length - 1]["col"]
 
         prompt = TTY::Prompt.new
 
-        if @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] == "⬜" # head bumps into another white square
+        if @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] == "⬜" # head bumps into another white square
             puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
             # \e[41m - red background
             # \e[37m - white text
             # \e[0m - clear format
-            puts "Your score is #{@final_score}."
+            puts "Your score is #{@final_score}.\n\n"
             prompt.keypress("Press Enter to continue", keys: [:return])
             load "../src/snake-game.rb"
         else
             # adds white square to head
-            @squares[@head_row + @direction["x"]][@head_col + @direction["y"]] = "⬜"
-            @snake.push("x" => @head_row + @direction["x"], "y" => @head_col + @direction["y"])
+            @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] = "⬜"
+            @snake.push("row" => @head_row + @direction["row"], "col" => @head_col + @direction["col"])
             # removes tail of snake by adding black square
+            # @squares[@tail_row][@tail_col] = "⬛"
+            # @snake.shift
+        end
+
+        if @head_row == @prey.target["row"] && @head_col == @prey.target["col"]
+            @board.score += 1
+            @prey.draw_prey
+            @final_score = @board.score
+        else
             @squares[@tail_row][@tail_col] = "⬛"
             @snake.shift
         end
 
-        if @head_row == @prey.target["x"] && @head_col == @prey.target["y"]
-            @board.score += 1
-            @prey.draw_prey
-            @final_score = @board.score
-        end
-
     end
+
+    def control
+        # while = true
+            input = STDIN.getch
+            up = "w"
+            down = "s"
+            right = "d"
+            left = "a"
+            print input
+            if input == up
+                @direction = {"row" => -1, "col" => 0}
+            elsif input == down
+                @direction = {"row" => 1, "col" => 0}
+            elsif input == right
+                @direction = {"row" => 0, "col" => 1}
+            elsif input == left
+                @direction = {"row" => 0, "col" => -1}
+            end
+        # end
+    end
+
 end

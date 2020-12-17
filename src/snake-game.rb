@@ -40,6 +40,7 @@ for option in (1..nil)
         when "Top 10 Players"
             clear
             load "top-10.rb"
+            prompt.keypress("Press any key to continue.")
             system "clear"
             next
         when "Exit"
