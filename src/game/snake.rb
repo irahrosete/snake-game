@@ -1,8 +1,9 @@
 require "tty-prompt"
 
 class Snake
-    def initialize (board)
+    def initialize (board, prey)
         @board = board
+        @prey = prey
         @squares = board.squares
         @size = board.size
         @direction = {"x" => 0, "y" => 1}
@@ -48,6 +49,11 @@ class Snake
             # removes tail of snake by adding black square
             @squares[@tail_row][@tail_col] = "⬛"
             @snake.shift
+        end
+
+        if @head_row == @prey.target["x"] && @head_col == @prey.target["y"]
+            @board.score += 1
+            @prey.draw_prey
         end
 
     end
