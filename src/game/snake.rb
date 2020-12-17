@@ -40,6 +40,7 @@ class Snake
             # \e[41m - red background
             # \e[37m - white text
             # \e[0m - clear format
+            puts "Your score is #{@final_score}."
             prompt.keypress("Press Enter to continue", keys: [:return])
             load "../src/snake-game.rb"
         else
@@ -54,6 +55,7 @@ class Snake
         if @head_row == @prey.target["x"] && @head_col == @prey.target["y"]
             @board.score += 1
             @prey.draw_prey
+            @final_score = @board.score
         end
 
     end
