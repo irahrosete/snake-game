@@ -15,9 +15,15 @@ snake.draw_snake
 # refreshes the screen to give the illusion of the snake moving
 # screen refreshes when control is input
 # need to figure out how to make the snake move again
-loop do
-    snake.move(snake.get_direction)
-    board.draw_board
-    sleep 0.4
-    snake.control
-end
+
+# Thread.new do
+    loop do
+        snake.move(snake.get_direction)
+        board.draw_board
+        sleep 0.4
+        snake.control
+    end
+# end
+# loop do
+    # snake.control
+# end

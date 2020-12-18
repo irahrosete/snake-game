@@ -29,7 +29,7 @@ class Board
             row.each do |col|
                 print col # prints the squares
             end
-            puts "\n"
+            puts "\r"
         end
     end
 end

@@ -2,6 +2,12 @@
 
 ## Purpose and Scope
 
+- describe at a high level what the application will do
+- identify the problem it will solve and explain why you are developing it
+- identify the target audience
+- explain how a member of the target audience will use it
+300 words
+
 Snake is a game that surged to popularity in the late 90s and early 2000s when Nokia phones came preloaded with it. It is a classic game where a player starts with a short line that moves forward and is maneuvered within a bordered plane in order to eat items in the form of dots. The line keeps moving forward and grows in length according to the number of items eaten, resembling a snake. The aim of the game is to eat as much items without hitting the snake's own body, or in some versions, the borders.
 
 This project aims to recreate the Snake game using Ruby. The project will apply object-oriented programming with the use of classes, defining methods and utilising algorithm knowledge that I've gained so far. In the process of developing the game, I also aim to learn more about grids and coordinates and collision detection, which are essential concepts to the game. In addition, I will also be learning about how to apply Ruby gems to make the game more interactive and use-friendly, as well as tapping into the power of APIs (Application Programming Interfaces). This will hopefully extend my Ruby knowledge and solidy my skills in programming.
@@ -11,7 +17,15 @@ The aim of the program is to entertain as well as provide some competitive incen
 The target audience is anyone from someone looking to have a break from a day's work, to someone who is looking to improve their basic coordination skills, to a master Snake gamer wanting to keep their lead recorded.
 
 ## Features
+
+- at least three features
+- describe each
+- use of variables and the concept of variable scope
+- loops and conditional control structures
+- error handling
+300 words
 #### Game interface
+
 The actual game will be housed in a window separate to the terminal to give a better user experience. There will be an ability to pause and quit the game once it is started, and to restart the game once over. The snake will be able to go through the canvas borders and come back in through the other side. The game will automatically finish once the snake hits its own body.
 #### Scoring system
 The game will keep track of the number of items that the snake eats: 1 point for every dot. The program will keep a record of the top 10 highest scoring players and their corresponding scores.

@@ -1,7 +1,6 @@
 require "tty-prompt"
 
 class Snake
-    attr_reader :final_score
     def initialize (board, prey)
         @board = board
         @prey = prey
@@ -34,28 +33,8 @@ class Snake
         @head_row = @snake[@snake.length - 1]["row"]
         @head_col = @snake[@snake.length - 1]["col"]
 
-        prompt = TTY::Prompt.new
-
         if @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] == "⬜" # head bumps into another white square
-            puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
-            # \e[41m - red background
-            # \e[37m - white text
-            # \e[0m - clear format
-            puts "Your score is #{@final_score}.\n\n"
-
-            ans = prompt.select("Would you like to save your score?") do |menu|
-                menu.choice "Yes"
-                menu.choice "No"
-            end
-
-            if ans == "Yes"
-                puts "Score saved.\n\n"
-            elsif ans == "No"
-                puts "\n"
-            end
-
-            prompt.keypress("Press Enter to continue", keys: [:return])
-            load "../src/snake-game.rb"
+            end_game
         else
             # adds white square to head
             @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] = "⬜"
@@ -65,12 +44,38 @@ class Snake
         if @head_row == @prey.target["row"] && @head_col == @prey.target["col"]
             @board.score += 1
             @prey.draw_prey
-            @final_score = @board.score
+            $final_score = @board.score
         else
             # removes tail of snake by adding black square
             @squares[@tail_row][@tail_col] = "⬛"
             @snake.shift
         end
+    end
+
+    def end_game
+        puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
+        # \e[41m - red background
+        # \e[37m - white text
+        # \e[0m - clear format
+        puts "Your score is #{$final_score}.\n\r"
+        save_score
+    end
+
+    def save_score
+        prompt = TTY::Prompt.new
+        ans = prompt.select("Would you like to save your score?") do |menu|
+            menu.choice "Yes"
+            menu.choice "No"
+        end
+
+        if ans == "Yes"
+            puts "\n\rScore saved.\n\r"
+        elsif ans == "No"
+            puts "\r"
+        end
+
+        prompt.keypress("Press Enter to continue", keys: [:return])
+        load "../src/snake-game.rb"
     end
 
     def control

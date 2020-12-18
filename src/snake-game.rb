@@ -3,7 +3,8 @@ system "clear"
 load "title.rb"
 
 prompt = TTY::Prompt.new
-player = prompt.ask("\nHi there! Welcome to the Snake Game. What is your name?\n", required: true)
+$player = prompt.ask("\nHi there! Welcome to the Snake Game. What is your name?\n", required: true)
+
 sleep 1
 system "clear"
 
@@ -16,7 +17,7 @@ end
 
 loop do
     load "title.rb"
-    option = prompt.select("\nHi, \e[32m#{player.upcase}\e[0m! Let's play.") do |menu|
+    option = prompt.select("\nHi, \e[32m#{$player.upcase}\e[0m! Let's play.") do |menu|
         # \e[32m - green text
         # \e[0m - clear format
         menu.choice "Start Game"
@@ -29,7 +30,6 @@ loop do
         when "Start Game"
             sleep 0.5
             load "./game/game.rb"
-            # prompt.keypress("\nPress Enter to continue", keys: [:return])
             system "clear"
         when "How to Play"
             clear
@@ -45,7 +45,7 @@ loop do
             next
         when "Exit"
             clear
-            puts "\n\e[32mGoodbye!\e[0m\n\n"
+            puts "\n\e[32mGoodbye!\e[0m\n\r"
             exit
     end
 end

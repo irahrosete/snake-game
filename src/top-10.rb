@@ -4,8 +4,16 @@ require "yaml"
 
 puts "\n\e[32mTop 10 Players\e[0m\n\n"
 
+if $final_score.nil? == true
+    #search yaml for $player and get score
+# else
+    $final_score = 0
+end
+
 score = YAML.load_file("scores.yaml")
-score.store(:annie, 11) # update this to accept new player name and score
+puts score
+
+score.store($player.to_sym, $final_score) # update this to accept new player name and score
 File.open("scores.yaml", 'w') {|f| f.write score.to_yaml}
 score = YAML.load_file("scores.yaml")
 
