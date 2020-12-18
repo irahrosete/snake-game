@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    curses (1.4.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
     strings (0.2.0)
@@ -32,7 +31,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  curses
   tty-prompt
   tty-table
 

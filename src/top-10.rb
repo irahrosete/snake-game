@@ -1,8 +1,6 @@
 require "tty-table"
 require "tty-prompt"
 require "yaml"
-# require_relative "./game/snake"
-# require_relative "snake-game"
 
 puts "\n\e[32mTop 10 Players\e[0m\n\n"
 
@@ -10,7 +8,6 @@ score = YAML.load_file("scores.yaml")
 score.store(:annie, 11) # update this to accept new player name and score
 File.open("scores.yaml", 'w') {|f| f.write score.to_yaml}
 score = YAML.load_file("scores.yaml")
-
 
 top_score = score.sort_by {|player, score| score}.reverse
 

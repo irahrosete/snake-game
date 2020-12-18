@@ -29,18 +29,24 @@ There will be a list of menu items to assist the player before a new game is pla
 The program will send an email notification to the current leader once a registered player beats their score. The notification will include the player name, the new top score, and the date when the new top score was recorded as well as an invitation to play the game again. No notification will be sent if the current top score remains the same. This notification assumes that a player who registers has given a valid email address.
 
 ## User Interface
-The application will start in the terminal and take the user's name. Then the user is presented with the menu. The up and down arrow keys are used to choose from the four menu options: Start, How to Play, Top 10, and Exit. Limiting input to these four options will eliminate input error.
+The application will start in the terminal and take the user's name. Then the user is presented with the menu. The up and down arrow keys are used to choose from the four menu options: Start, How to Play, Top 10 Players, and Exit. Limiting input to these four options will eliminate user input error.
 
-When selected, information on how to play the game is printed out to the terminal. In the same way, when Top 10 option is selected, the Top 10 players and their scores are printed out to the terminal with an option to save the list as a text file.
+![snake-game-menu](docs/snake-game-menu.jpg)
 
-The game starts in a new window and once a game is over, the user can choose to keep restarting the game from this window. When the user exits the game, they will be sent back to the terminal with their highest score printed out. The user is asked if they want to play again or save their score or exit the program. Saving their score will require the player to submit their email address. This will then rank them and add them to the leader board.
+When selected, information on how to play the game is printed out to the terminal. In the same way, when Top 10 Players option is selected, the Top 10 players and their scores are printed out to the terminal with an option to save the list as a text file.
 
-When a user beats the current top score, an email notification is automatically sent to the holder of that top score to let them know that their score has been beaten along with the information of who beat them and an invitation to play the game again.
+![snake-game-how-to](docs/snake-game-how-to.jpg)
+![snake-game-top10](docs/snake-game-top10.jpg)
+
+The game starts with a fresh screen and once the game is over, the final score gets printed out. The user can then choose to save their score. If they choose to save, the score will get appended to a database in the form of a yaml file. This will then be available to calculate the new top 10 players once the user checks the Top 10 Players menu again. Both options will then bring the user back to the main menu.
+
+![snake-game-start](docs/snake-game-start.jpg)
+![snake-game-end](docs/snake-game-end.jpg)
 
 ## Control Flow
-![snake-game-flowchart](./docs/snake-game.png)
+![snake-game-flowchart](./docs/snake-game02.png)
 ## Implementation Plan
-Trello was used to implement the features of this application. The game was initially planned to utilise the Ruby2D gem but there were compatibility issues with using Ubuntu WSL. A decision was made to render the game raw on the terminal.
+Trello was used to implement the features of this application. The game was initially planned to utilise the Ruby2D gem but there were compatibility issues with using it in Ubuntu WSL. A decision was made to render the game raw on the terminal.
 
 [Snake Game - Trello Board](https://trello.com/b/COkQo7qV)
 ![snake-game-trello-board](docs/snake-game-trello-board.jpg)
