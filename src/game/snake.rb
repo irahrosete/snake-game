@@ -61,8 +61,8 @@ class Snake
         pastel = Pastel.new
         puts "\n"
         puts pastel.white.on_red(" Game Over ")
-        puts "\n"
-        puts "Your score is #{$final_score}.\n\r"
+        # puts "\n"
+        puts "\r\nYour score is #{$final_score}.\n\r"
     end
 
     def save_score
@@ -76,7 +76,7 @@ class Snake
             score = YAML.load_file("../src/scores.yaml")
             score.store($player.downcase.to_sym, $final_score) # update this to accept new player name and score
             File.open("scores.yaml", 'w') {|f| f.write score.to_yaml}
-            puts "\n\rScore saved.\n\r"
+            puts "\rScore saved.\n\r"
         elsif ans == "No"
             puts "\r"
         end

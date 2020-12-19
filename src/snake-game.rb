@@ -1,7 +1,9 @@
 require "tty-prompt"
 require "pastel"
 require_relative "arg"
-require_relative "title"
+
+system "clear"
+load "title.rb"
 
 prompt = TTY::Prompt.new
 $player = prompt.ask("\nHi there! Welcome to the Snake Game. What is your name?\n", required: true)
