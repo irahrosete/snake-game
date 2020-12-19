@@ -1,6 +1,7 @@
 # Snake Game
 
 Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)
+Developer: [Irah Rosete](https://github.com/irahrosete)
 
 ## Purpose and Scope
 
@@ -29,20 +30,24 @@ Both the **How to Play** and **Top 10 Players** options will send the user back 
 #### Game interface
 The game is played on a 16x16 grid. It starts with the snake having a length of three grids and moving forward to the right. The food is randomly generated within the grid. There is no ability to pause or quit the game once it is started. The game will automatically finish once the snake hits its own body or any of the borders.
 #### Scoring system
-The game will keep track of the number of items that the snake eats: 1 point for every item. The program will keep a record of player names and their corresponding scores in a persistent database in the form of a yaml file. New player name and score get added when user chooses to save their score at the end of each game.
+The game will keep track of the number of items that the snake eats: 1 point for every item. The final score gets printed out at the end of the game and the player is prompted with a Yes or No option to save their score. Limiting input to these two options will eliminate user input error.
+
+The program keeps a record of player names and their corresponding scores in a persistent database in the form of a yaml file. New player name and their new score get added when user chooses the option to save their score.
 #### File Output
-There is an ability to save the list of Top 10 Players into a .txt file.
+There is an ability to save the list of Top 10 Players into a .txt file. The player is prompted with a Yes or No option for this. Limiting input to these two options will eliminate user input error.
 
 ## User Interface
 The application will start in the terminal and take the user's name. Then the user is presented with the menu. The up and down arrow keys are used to choose from the four menu options: Start, How to Play, Top 10 Players, and Exit.
 
+![snake-game-name-error](docs/snake-game-name-error.jpg)
+
 ![snake-game-menu](docs/snake-game-menu.jpg)
 
-When selected, information on how to play the game is printed out to the terminal.
+When selected, information on how to play the game is printed out to the terminal. The game uses the keys **w**, **a**, **s** and **d** to control the snake.
 
 ![snake-game-how-to](docs/snake-game-how-to.jpg)
 
-In the same way, when Top 10 Players option is selected, the Top 10 players and their scores are printed out to the terminal with an option to save the list as a text file.
+In the same way, when selected, the Top 10 players and their scores are printed out to the terminal with an option to save the list as a text file.
 
 ![snake-game-top10](docs/snake-game-top10.jpg)
 
@@ -65,30 +70,38 @@ Trello was used to implement the features of this application. The game was init
 
 ![snake-game-trello-board](docs/snake-game-trello-board02.jpg)
 
-## Setup
-#### Dependencies
-As this application runs on Ruby, you will need to have Ruby installed on your system. If you do not have Ruby installed, use this [guide](https://www.ruby-lang.org/en/documentation/installation/).
-
-This application uses the following gems:
-1. TTY Prompt
-2. TTY Table
-3. Pastel
-
-All of the gems have been bundled with the applcation. If you do not have bundler installed, run `gem install bundler` in your terminal.
-
-#### Installation
-Clone github repo
-Navigate to src folder
-run `bundle install` to use the gems above.
-run script *include bundle install in script
-
-#### System Requirements
-Ruby version 2.7.1 was used to develop this application on Windows 10.
-
-This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may therefore render differently when using other systems.
+## Future Improvements
+1. Device a way to not allow the snake to go backwards. At the moment, the game ends when the player attempts to direct the snake backwards.
+2. Do not make the prey randomly generate on the snake's body. At the moment, the prey does not detect the snake and can appear in the same grid where the body of the snake is.
 
 ## Resources
 [How to Use Ruby Threads: An Easy To Understand Tutorial](https://www.rubyguides.com/2015/07/ruby-threads/)<br>
 [Ruby 2D](https://www.ruby2d.com/learn/)<br>
 [Saving/Retrieving Data With a YAML file in Ruby: The Basics](https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94)<br>
 [Understanding Screen and Internal Coordinates](https://subscription.packtpub.com/book/game_development/9781786466198/1/ch01lvl1sec16/understanding-screen-and-internal-coordinates)
+
+## Setup
+#### Dependencies
+As this application runs on Ruby, you will need to have Ruby installed on your system. If you do not have Ruby installed, use this [guide](https://www.ruby-lang.org/en/documentation/installation/).
+
+This application uses the following gems:
+1. tty-prompt (0.22.0)
+2. tty-table (0.12.0)
+3. pastel (0.8.0)
+
+All of the gems have been bundled with the applcation. If you do not have bundler installed, run `gem install bundler` in your terminal.
+
+#### Installation
+From your teminal, follow the below instructions:
+1. Clone this github repo
+   `git clone git@github.com:irahrosete/snake-game.git`
+2. Navigate to the src folder
+   `cd src`
+3. Run this script to start the application
+   `./snake_game.sh`
+4. Have fun!
+
+#### System Requirements
+Ruby version 2.7.1 was used to develop this application on Windows 10.
+
+This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may therefore render differently when using other systems.
