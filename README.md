@@ -3,6 +3,24 @@
 Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)<br>
 Developer: [Irah Rosete](https://github.com/irahrosete)
 
+## Content
+- [Purpose and Scope](https://github.com/irahrosete/snake-game#purpose-and-scope)
+- [Features](https://github.com/irahrosete/snake-game#features)
+  - [User Input](https://github.com/irahrosete/snake-game#user-input)
+  - [Menu](https://github.com/irahrosete/snake-game#menu)
+  - [Game Interface](https://github.com/irahrosete/snake-game#game-interface)
+  - [Scoring System](https://github.com/irahrosete/snake-game#scoring-system)
+  - [File Output](https://github.com/irahrosete/snake-game#file-output)
+- [User Interface](https://github.com/irahrosete/snake-game#user-interface)
+- [Control Flow](https://github.com/irahrosete/snake-game#control-flow)
+- [Implementation Plan](https://github.com/irahrosete/snake-game#implementation-plan)
+- [Future Improvements](https://github.com/irahrosete/snake-game#future-improvements)
+- [Resources](https://github.com/irahrosete/snake-game#resources)
+- [Setup](https://github.com/irahrosete/snake-game#setup)
+  - [Dependencies](https://github.com/irahrosete/snake-game#dependencies)
+  - [Installation](https://github.com/irahrosete/snake-game#installation)
+  - [System Requirements](https://github.com/irahrosete/snake-game#system-requirements)
+
 ## Purpose and Scope
 
 Snake Game surged to popularity in the late 90s and early 2000s when Nokia phones came preloaded with it. It is a classic game where a player starts with a short line that moves forward and is maneuvered within a bordered plane in order to eat items around the plane. The line keeps moving forward and grows in length according to the number of items eaten, resembling a snake. The aim of the game is to eat as much items without hitting the snake's own body or the borders.
@@ -91,11 +109,11 @@ All of the gems have been bundled with the applcation. If you do not have bundle
 
 #### Installation
 From your teminal, follow the below instructions:
-1. Clone this github repo
+1. Clone this github repo <br>
    `git clone git@github.com:irahrosete/snake-game.git`
-2. Navigate to the src folder
+2. Navigate to the src folder <br>
    `cd src`
-3. Run this script to start the application
+3. Run this script to start the application <br>
    `./snake_game.sh`
 4. Have fun!
 

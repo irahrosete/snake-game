@@ -12,7 +12,7 @@ prey.draw_prey
 snake = Snake.new(board, prey)
 snake.draw_snake
 
-# screen refreshes when control is input
+# refreshes screen when control is input
 thread = Thread.new do
     while !snake.game_over
         snake.control
@@ -25,6 +25,7 @@ while !snake.game_over
     board.draw_board
     sleep 0.4
 end
+
 thread.kill
 snake.end_game
 snake.save_score

@@ -40,7 +40,6 @@ class Snake
 
         if @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] == "⬜" # head bumps into another white square
             @game_over = true
-            # end_game
         else
             # adds white square to head
             @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] = "⬜"
