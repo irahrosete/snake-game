@@ -1,3 +1,5 @@
+require "pastel"
+
 class Board
     attr_reader :squares, :size
     attr_accessor :score
@@ -23,8 +25,10 @@ class Board
     end
 
     def draw_board
+        pastel = Pastel.new
         system "clear"
-        puts "SCORE #{@score}\r\n\n"
+        puts pastel.green($player.upcase)
+        puts "\rSCORE #{@score}\r\n\n"
         @squares.each do |row|
             row.each do |col|
                 print col # prints the squares

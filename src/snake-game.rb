@@ -46,7 +46,10 @@ loop do
             next
         when "Exit"
             clear
-            puts "\n\e[32mGoodbye!\e[0m\n\r"
+            pastel = Pastel.new
+            puts "\n"
+            puts pastel.green("Goodbye!")
+            puts "\n"
             exit
     end
 end

@@ -1,5 +1,6 @@
 require "tty-prompt"
 require "yaml"
+require "pastel"
 
 class Snake
     attr_reader :game_over
@@ -58,10 +59,10 @@ class Snake
     end
 
     def end_game
-        puts "\n\e[41m\e[37m Game Over \e[0m\n\r"
-        # \e[41m - red background
-        # \e[37m - white text
-        # \e[0m - clear format
+        pastel = Pastel.new
+        puts "\n"
+        puts pastel.white.on_red(" Game Over ")
+        puts "\n"
         puts "Your score is #{$final_score}.\n\r"
     end
 
