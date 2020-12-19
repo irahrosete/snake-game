@@ -1,6 +1,6 @@
 # Snake Game
 
-Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)
+Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)<br>
 Developer: [Irah Rosete](https://github.com/irahrosete)
 
 ## Purpose and Scope
@@ -16,7 +16,7 @@ The target audience is anyone from someone looking to have a break from a day's 
 ## Features
 
 #### User Input
-The user is greeted in the welcome screen, and a player name is asked. The application will not progress unless a name is provided. Error is handled here in that when the user hits enter but does not input a name, the application will ask for a name again. The player's name will show in the game interface whilst the game is being played.
+The user is greeted in the welcome screen, and a player name is asked. The application will not progress unless a name is provided. Error is handled here when the user hits enter but does not input a name. The application will return 'Value must be provided' and ask for a name again. The player's name will show in the game interface whilst the game is being played.
 #### Menu
 After the welcome screen, the user is presented with a list of menu items to assist before a new game is played:
    - The **Start Game** option will start the game.
@@ -38,8 +38,6 @@ There is an ability to save the list of Top 10 Players into a .txt file. The pla
 
 ## User Interface
 The application will start in the terminal and take the user's name. Then the user is presented with the menu. The up and down arrow keys are used to choose from the four menu options: Start, How to Play, Top 10 Players, and Exit.
-
-![snake-game-name-error](docs/snake-game-name-error.jpg)
 
 ![snake-game-menu](docs/snake-game-menu.jpg)
 
@@ -104,4 +102,4 @@ From your teminal, follow the below instructions:
 #### System Requirements
 Ruby version 2.7.1 was used to develop this application on Windows 10.
 
-This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may therefore render differently when using other systems.
+This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may render differently when using other systems.
