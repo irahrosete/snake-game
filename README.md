@@ -63,21 +63,17 @@ Trello was used to implement the features of this application. The game was init
 
 ![snake-game-trello-board](docs/snake-game-trello-board01.jpg)
 
+![snake-game-trello-board](docs/snake-game-trello-board02.jpg)
+
 ## Setup
-Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
-
-You must include:
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
-
 #### Dependencies
 As this application runs on Ruby, you will need to have Ruby installed on your system. If you do not have Ruby installed, use this [guide](https://www.ruby-lang.org/en/documentation/installation/).
 
 This application uses the following gems:
-###### 1. TTY Prompt
-###### 2. TTY Table
-###### 3. Pastel
+1. TTY Prompt
+2. TTY Table
+3. Pastel
+
 All of the gems have been bundled with the applcation. If you do not have bundler installed, run `gem install bundler` in your terminal.
 
 #### Installation
@@ -92,7 +88,7 @@ Ruby version 2.7.1 was used to develop this application on Windows 10.
 This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may therefore render differently when using other systems.
 
 ## Resources
-[How to Use Ruby Threads: An Easy To Understand Tutorial](https://www.rubyguides.com/2015/07/ruby-threads/)
-[Ruby 2D](https://www.ruby2d.com/learn/)
-[Saving/Retrieving Data With a YAML file in Ruby: The Basics](https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94)
+[How to Use Ruby Threads: An Easy To Understand Tutorial](https://www.rubyguides.com/2015/07/ruby-threads/)<br>
+[Ruby 2D](https://www.ruby2d.com/learn/)<br>
+[Saving/Retrieving Data With a YAML file in Ruby: The Basics](https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94)<br>
 [Understanding Screen and Internal Coordinates](https://subscription.packtpub.com/book/game_development/9781786466198/1/ch01lvl1sec16/understanding-screen-and-internal-coordinates)
