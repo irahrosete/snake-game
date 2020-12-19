@@ -3,7 +3,7 @@
 Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)<br>
 Developer: [Irah Rosete](https://github.com/irahrosete)
 
-## Content
+## Contents
 - [Purpose and Scope](https://github.com/irahrosete/snake-game#purpose-and-scope)
 - [Features](https://github.com/irahrosete/snake-game#features)
   - [User Input](https://github.com/irahrosete/snake-game#user-input)
@@ -116,6 +116,8 @@ From your teminal, follow the below instructions:
 3. Run this script to start the application <br>
    `./snake_game.sh`
 4. Have fun!
+
+You can also run `ruby snake-game.rb -h` to know more about the game.
 
 #### System Requirements
 Ruby version 2.7.1 was used to develop this application on Windows 10.
