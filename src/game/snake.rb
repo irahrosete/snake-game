@@ -1,4 +1,5 @@
 require "tty-prompt"
+require "yaml"
 
 class Snake
     def initialize (board, prey)
@@ -7,6 +8,7 @@ class Snake
         @squares = board.squares
         @size = board.size
         @direction = {"row" => 0, "col" => 1} # default direction is to the right. moves 0 rows and 1 column
+        $final_score = 0
     end
 
     def draw_snake
@@ -69,11 +71,13 @@ class Snake
         end
 
         if ans == "Yes"
+            score = YAML.load_file("../src/scores.yaml")
+            score.store($player.downcase.to_sym, $final_score) # update this to accept new player name and score
+            File.open("scores.yaml", 'w') {|f| f.write score.to_yaml}
             puts "\n\rScore saved.\n\r"
         elsif ans == "No"
             puts "\r"
         end
-
         prompt.keypress("Press Enter to continue", keys: [:return])
         load "../src/snake-game.rb"
     end

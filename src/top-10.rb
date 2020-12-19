@@ -3,22 +3,15 @@ require "tty-prompt"
 require "yaml"
 
 puts "\n\e[32mTop 10 Players\e[0m\n\n"
+score = YAML.load_file("scores.yaml")
 
-if $final_score.nil? == true
-    #search yaml for $player and get score
-# else
+if score.include?($player.downcase.to_sym) == true
+    $final_score = score[$player.downcase.to_sym]
+else
     $final_score = 0
 end
 
-score = YAML.load_file("scores.yaml")
-puts score
-
-score.store($player.to_sym, $final_score) # update this to accept new player name and score
-File.open("scores.yaml", 'w') {|f| f.write score.to_yaml}
-score = YAML.load_file("scores.yaml")
-
 top_score = score.sort_by {|player, score| score}.reverse
-
 table = TTY::Table.new(header: ["Player","Score"])
 for i in 0...9
     table << top_score[i]
