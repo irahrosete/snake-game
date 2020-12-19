@@ -2,6 +2,7 @@ require "tty-prompt"
 require "yaml"
 
 class Snake
+    attr_reader :game_over
     def initialize (board, prey)
         @board = board
         @prey = prey
@@ -9,6 +10,7 @@ class Snake
         @size = board.size
         @direction = {"row" => 0, "col" => 1} # default direction is to the right. moves 0 rows and 1 column
         $final_score = 0
+        @game_over = false
     end
 
     def draw_snake
@@ -36,7 +38,8 @@ class Snake
         @head_col = @snake[@snake.length - 1]["col"]
 
         if @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] == "⬜" # head bumps into another white square
-            end_game
+            @game_over = true
+            # end_game
         else
             # adds white square to head
             @squares[@head_row + @direction["row"]][@head_col + @direction["col"]] = "⬜"
@@ -60,7 +63,6 @@ class Snake
         # \e[37m - white text
         # \e[0m - clear format
         puts "Your score is #{$final_score}.\n\r"
-        save_score
     end
 
     def save_score
@@ -79,7 +81,6 @@ class Snake
             puts "\r"
         end
         prompt.keypress("Press Enter to continue", keys: [:return])
-        load "../src/snake-game.rb"
     end
 
     def control

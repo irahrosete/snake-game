@@ -12,18 +12,20 @@ prey.draw_prey
 snake = Snake.new(board, prey)
 snake.draw_snake
 
-# refreshes the screen to give the illusion of the snake moving
 # screen refreshes when control is input
-# need to figure out how to make the snake move again
-
-# Thread.new do
-    loop do
-        snake.move(snake.get_direction)
-        board.draw_board
-        sleep 0.4
+thread = Thread.new do
+    while !snake.game_over
         snake.control
     end
-# end
-# loop do
-    # snake.control
-# end
+end
+
+# refreshes the screen to give the illusion of the snake moving
+while !snake.game_over
+    snake.move(snake.get_direction)
+    board.draw_board
+    sleep 0.4
+end
+thread.kill
+snake.end_game
+snake.save_score
+load "../src/snake-game.rb"

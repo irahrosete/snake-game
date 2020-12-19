@@ -1,4 +1,5 @@
 require "tty-prompt"
+require "pastel"
 system "clear"
 load "title.rb"
 

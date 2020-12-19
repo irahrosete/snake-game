@@ -31,6 +31,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  pastel
   tty-prompt
   tty-table
 
