@@ -122,4 +122,4 @@ You can also run `ruby snake-game.rb -h` to know more about the game.
 #### System Requirements
 Ruby version 2.7.1 was used to develop this application on Windows 10.
 
-This application was designed and tested to render on Ubuntu WSL 18.04. Graphics may render differently when using other systems.
+This application was designed and [tested](docs/snake-game-tests.md) to render on Ubuntu WSL 18.04. Graphics may render differently when using other systems.
