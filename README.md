@@ -1,4 +1,4 @@
-# Snake Game
+# 🐍 Snake Game
 
 Github Repo: [Snake Game](https://github.com/irahrosete/snake-game)<br>
 Developer: [Irah Rosete](https://github.com/irahrosete)

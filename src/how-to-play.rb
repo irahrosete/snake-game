@@ -1,7 +1,7 @@
 require "pastel"
 
 pastel = Pastel.new
-puts "\n\e[32mHow to Play\e[0m\n\n"
+puts pastel.green("\nHow to Play\n")
 sleep 1.5
 puts "Collect as much food to feed the hungry snake. 🐍\n\n"
 sleep 2
@@ -27,6 +27,6 @@ puts "the higher your score!\n\n"
 sleep 3
 puts "Make sure not to collide the snake to the walls or its own body."
 sleep 3
-puts "Otherwise, Game Over. 🛑\n\n"
+puts "Otherwise, it's Game Over. 🛑\n\n"
 sleep 3
 puts "Have fun!\n\n"
